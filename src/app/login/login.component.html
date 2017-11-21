@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="panel panel-default col-md-4 col-md-offset-4">
+    <div class="panel-body">
+      <div class="page-header text-center">
+        <h3>Portal Administrativo</h3>
+      </div>
+      <form #formulario="ngForm" 
+            (ngSubmit)="login(formulario)">
+        <div class="form-group"
+             [class.has-error]="hasErrorAndTouched(email)">
+          <label for="email">E-mail</label>
+          <input type="email" 
+                 name="email"
+                 #email="ngModel"
+                 ngModel
+                 required
+                 class="form-control">
+        </div>
+        <div class="form-group"
+             [class.has-error]="hasErrorAndTouched(passwd)">
+          <label for="email">Senha</label>
+          <input type="password" 
+                 name="passwd"
+                 #passwd="ngModel"
+                 ngModel
+                 required
+                 class="form-control">
+        </div>
+        <div class="row">
+          <div class="col-sm-5 col-sm-offset-7">
+            <button type="submit"
+                    class="btn btn-primary btn-block">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

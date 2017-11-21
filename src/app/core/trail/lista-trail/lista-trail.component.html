@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="page-header">
+        <h3>Lista de trilhas</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-12" *ngIf="response.message">
+          <div class="alert alert-warning">
+            {{ response.message }}
+          </div>
+        </div>
+      </div>
+      <div class="table-info" *ngIf="listaTrails.length">
+        <table class="table table-bordered">
+          <thead>
+            <th class="text-center">Nome</th>
+            <th class="text-center">Distância</th>
+            <th class="text-center">Tempo Total</th>
+            <th class="text-center">Avaliação</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr class="text-center"
+                *ngFor="let trail of listaTrails">
+              <td>{{ trail.trailname }}</td>
+              <td>{{ trail.traildist }} Km</td>
+              <td>{{ trail.trailtime }} anos</td>
+              <td>{{ trail.trailrat }}</td>
+              <td>
+                <button class="btn btn-icon btn-info btn-sm">
+                  <i class="glyphicon glyphicon-user"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p *ngIf="!listaTrails.length">
+        Não existe nenhuma trilha cadastrada ainda
+      </p>
+    </div>
+  </div>
+</div>
