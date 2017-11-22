@@ -71,7 +71,7 @@ export class HttpService {
         return this.subscription;
     }
 
-    put(url: string, queryParams: Object, body: Object, token?: string) {
+    put(url: string, queryParams?: Object, body?: Object, token?: string) {
         let headers = new Headers({ "Content-Type": "application/json; charset=UTF-8" });
 
         let params = new URLSearchParams();

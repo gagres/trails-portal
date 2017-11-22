@@ -1,0 +1,449 @@
+/* Import Google Fonts - Raleway and Roboto */
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
+
+/* HTML Tags CSS */
+html, body{
+    overflow-x:hidden;
+    height: 100%; 
+    margin: 0px; 
+    padding: 0px;
+}
+h4{
+    margin:0;
+}
+h5{
+    margin:0;
+}
+h6{
+    margin:0;
+}
+img{
+    opacity:0.8;
+}
+hr{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+/* Application Login CSS */
+.login-form{
+    font-family:'Raleway', sans-serif;
+    background:#fff !important;
+}
+.login-information{
+    width:20%;
+    padding:12px;
+    height:380px;
+    background:#483A3A;
+    text-align:center;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.login-information .rounded-photo{
+    width:130px;
+    height:130px;
+    display:flex;
+    padding:12px;
+    margin:15px auto 0 auto;
+    justify-content:center;
+    align-items:center;
+    background-color:#fff;
+    border-radius:50%;
+    text-align:center;
+}
+.login-header{
+    width:100%;
+    padding:8px;
+    border-bottom:1px solid #e0e0e0;
+}
+.login-card{
+    padding:12px;
+    height:380px;
+    width:40% !important;
+    position:relative;
+    display:inline-block;
+    vertical-align:top;
+    margin-right:15px;
+    border-radius:0;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.login-body{
+    padding:14px;
+    font-size:18px;
+}
+.login-body .forgot-password{
+    font-size:15px;
+}
+.login-body .form-control{
+    padding:8px;
+    margin-top:-3px;
+    font-size:16px !important;
+}
+
+/* Application Menu CSS */
+.application-menu{
+    padding:12px;
+    min-height:100%;
+    height:100vh;
+    background-color:#483A3A;
+}
+.application-menu .application-menu-header{
+    text-align:center;
+    padding:4px;
+}
+.application-menu .application-menu-user-photo .rounded-photo{
+    width:130px;
+    height:130px;
+    display:flex;
+    padding:12px;
+    margin:15px auto 0 auto;
+    justify-content:center;
+    align-items:center;
+    background-color:#fff;
+    border-radius:50%;
+    text-align:center;
+}
+.application-menu .application-menu-user-photo .menu-user-name{
+    cursor:pointer;
+}
+.application-menu .application-menu-user-photo .menu-user-name:hover{
+    text-decoration:underline;
+}
+.application-menu .application-menu-actions{
+    margin-top:30px;
+}
+.application-menu .application-menu-actions .action{
+    width:100%;
+    padding:14px;
+    color:#f9f9f9;
+    font-size:14.5px;
+    display:block;
+    text-align:center;
+    border-top:1px dotted #484A3F;
+}
+.application-menu .application-menu-actions .action:hover{
+    text-decoration:none;
+}
+.application-menu .menu-action-active{
+    font-weight:bold !important;
+    border-top:none !important;
+    color:#483A3A !important;
+    background-color:#F5EEDB;
+}
+
+/* Application Navigation Status */
+.application-navigation-bar{
+    width:100%;
+    color:#444;
+    height:15px;
+    text-align:right;
+    font-size:17px;
+    vertical-align:middle;
+    background-color:#EAE1C0;
+}
+
+/* Application Body CSS */
+.application-body .application-body-content{
+    padding:14px;
+}
+.application-body .application-body-title-image{
+    padding-left:20px;
+    padding-right:6px;
+}
+
+/* Application Footer CSS */
+.application-footer{
+    width:100%;
+    height:40px;
+    background-color:#F5EEDB;
+}
+
+/* Bootstrap CSS - Fix Bugs */
+.container-fluid{
+    font-family:'Raleway', sans-serif;
+    color:#444 !important;
+}
+.col-sm-12{
+    padding:0 !important;
+}
+.col-sm-10{
+    padding:0 !important;
+}
+.col-sm-2{
+    padding:0 !important;
+}
+
+/* Card CSS */
+.dashboard-card{
+    width:100%;
+    padding:16px;
+    display:inline-block;
+    vertical-align:top;
+    margin-right:15px;
+    border-radius:0;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.dashboard-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.dashboard-card-header{
+    padding-bottom:6px;
+    border-bottom:1px solid #e0e0e0;
+}
+.dashboard-card-body{
+    text-align:center;
+}
+.dashboard-card-footer{
+    padding-top:6px;
+    border-top:1px solid #e0e0e0;
+}
+
+/* Dashboard Box CSS */
+.dashboard-box{
+    padding:0;
+    text-align:left;
+    font-size:15px;
+    border-radius:0;
+}
+.dashboard-box .card-header{
+    color:#f6f6f6;
+    border-radius:0 !important;
+}
+.dashboard-box .card-body{
+    padding:10px;
+    font-size:15px;
+}
+.dashboard-box .card-body .principal{
+    font-size:42px;
+}
+
+/* Users Table CSS */
+.users-table{
+    width:100%;
+    table-layout: fixed;
+    text-align:center;
+}
+.users-table thead th{
+    padding:16px;
+    color:#f0f0f0;
+}
+.users-table tbody td{
+    padding:10px;
+    font-size:15px;
+    border-bottom:1px solid #f0f0f0;
+}
+
+/* Font-Awesome icons CSS */
+.icon-body{
+    width:30px;
+    padding:7px;
+    display:flex;
+    align-items:center;
+    cursor:pointer;
+    border-radius:50%;
+    justify-content:center;
+}
+
+/* Filter Inputs CSS */
+.filter-input{
+    width:240px;
+    padding:7px;
+    cursor:pointer;
+}
+.filter-select{
+    width:240px;
+    padding:10px;
+    cursor:pointer;
+}
+
+/* Qtd-pag Input CSS */
+.qtd-pag select{
+    width:65px;
+    font-size:14px;
+    cursor:pointer;
+}
+
+/* Buttons CSS */
+.refresh-information{
+    width:125px;
+    border:none;
+    padding:8px;
+    cursor:pointer;
+    color:#f4f4f4;
+    background-color:#8FB98B;
+}
+
+/* Inactivate CSS */
+.inactivate-information{
+    width:125px;
+    border:none;
+    padding:8px;
+    cursor:pointer;
+    color:#f4f4f4;
+    background-color:#C44D58;
+}
+/* Inactivate CSS */
+.activate-information{
+    width:125px;
+    border:none;
+    padding:8px;
+    cursor:pointer;
+    color:#f4f4f4;
+    background-color:#8FB98B;
+}
+
+/* Header CSS */
+.header{
+    padding-bottom:8px;
+    border-bottom:1px solid #f0f0f0;
+}
+
+/* Application General CSS */
+.green{
+    color:#A0D36E;
+}
+.white{
+    color:#f7f7f7;
+}
+.brown{
+    color:#483A3A !important;
+}
+.red{
+    color:#DE564B;
+}
+.yellow{
+    color:#F4A460;
+}
+.bronze{
+    color:#cd7f32;
+}
+.silver{
+    color:#c0c0c0;
+}
+.milk{
+    color:#f0f0f0;
+}
+.blue{
+    color:#6495ED;
+}
+.background-green{
+    background-color:#8FB98B;
+}
+.background-white{
+    background-color:#f7f7f7;
+}
+.background-brown{
+    background-color:#483A3A !important;
+}
+.background-red{
+    background-color:#c44d58;
+}
+.background-yellow{
+    background-color:#F4A460;
+}
+.background-bronze{
+    background-color:#cd7f32;
+}
+.background-silver{
+    background-color:#c0c0c0;
+}
+.background-orange{
+    background-color:#F4A460;
+}
+.background-blue{
+    background-color:#6495ED;
+}
+.padding-sm{
+    padding-right:15px !important;
+    padding-left:15px !important;
+}
+.align-top{
+    vertical-align:top;
+}
+.align-middle{
+    vertical-align:middle;
+}
+.inline-block{
+    display:inline-block;
+}
+.right{
+    float:right;
+}
+.left{
+    float:left;
+}
+.block{
+    display:block;
+}
+.medium-font{
+    font-size:15px;
+}
+.m-l-sm{
+    margin-right:6px;
+}
+.m-r-sm{
+    margin-right:6px;
+}
+.m-b-sm{
+    margin-bottom:6px;
+}
+.m-b-md{
+    margin-bottom:15px;
+}
+.m-b-lg{
+    margin-bottom:25px;
+}
+.m-t-sm{
+    margin-top:6px;
+}
+.m-t-md{
+    margin-top:15px;
+}
+.m-t-lg{
+    margin-top:25px;
+}
+.align-in-center{
+    min-height:100%;
+    flex-wrap: wrap;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f6f6f6;
+}
+.align-in-center .copyright{
+    width:100%;
+    bottom:10px;
+    font-size:14px;
+    text-align:center;
+    position:absolute;
+}
+
+/* Label CSS */
+.label{
+    width:85px;
+    padding:5px;
+    font-size:14px;
+    font-weight:bold;
+    border-radius:4px;
+}
+.label-success{
+    color:#f6f6f6;
+    background-color:#8FB98B;
+}
+.label-danger{
+    color:#f6f6f6;
+    background-color:#c44d58;
+}
+
+/* Tables CSS */
+.dashboard-table{
+    width:100%;
+    table-layout:fixed;
+}
+.dashboard-table thead th{
+    padding:6px;
+    text-align:center;
+}
+.dashboard-table tbody td{
+    padding:8px;
+    text-align:center;
+}

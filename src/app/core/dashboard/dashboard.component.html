@@ -1,30 +1,276 @@
-<div class="container-fluid">
-  <div class="col-md-12">
-    <div class="panel panel-success">
-      <div class="panel-body">
-        <h3 class="text-center">Visão Geral <small>(Dados mais recentes)</small></h3><br/>
-        <div class="row float-right">
-          <div class="col-md-12">
-            <form method="POST">
-              <div class="form-group col-md-3 col-xs-6">
-                <label for="begin">Data de inicio</label>
-                <input type="date" class="form-control">
-              </div>
-              <div class="form-group col-md-3 col-xs-6">
-                <label for="begin">Data de fim</label>
-                <input type="date" class="form-control">
-              </div>
-              <div class="form-group col-md-2">
-                <label for="title">Vamos começar?</label>
-                <button class="btn btn-primary btn-block">
-                  Confirmar
-                </button>
-              </div>
-            </form>
-          </div>
+<div class="application-navigation-bar"></div>
+<div class="application-body">
+    <div class="application-body-content text-center">
+        <div class="row header">
+            <div class="col-sm-8">
+                <div class="application-body-title text-left m-b-lg m-t-md">
+                    <div class="application-body-title-image inline-block align-middle m-r-sm">
+                        <img src="assets/public/img/png/forest/mountain.png" width="95px">
+                    </div>
+                    <div class="application-body-title-content inline-block align-middle">
+                        <h4><b>Dashboard</b></h4>
+                        Informações completas referente a desempenho e relações estatísticas.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4" style="display:flex;justify-content:flex-end;align-items:center;padding-right:25px">
+                <img src="assets/public/img/png/forest/map.png" width="85px">
+            </div>
         </div>
-        <hr/>
-      </div>
+
+        <div class="row">
+            <div class="col-sm-6 padding-sm text-left">
+                <div class="application-body-filters m-t-lg m-b-lg">
+                    <input type="text" placeholder="Rota/Trilha" class="filter-input m-r-sm">
+                    <select class="filter-select">
+                        <option value="">Período</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-6 text-right padding-sm">
+                <div class="application-body-actions m-t-lg m-b-lg">
+                    <button type="submit" class="refresh-information">Atualizar <i class="fa fa-refresh"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row m-b-lg">
+            <div class="col-sm-12 padding-sm m-b-lg text-left">
+                <div class="header">
+                    <h4>
+                        <b>Informações Gerais</b>
+                        <i class="fa fa-map-signs right m-r-sm" style="margin-top:4px"></i>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="dashboard-card dashboard-box">
+                    <div class="card-header back background-red">
+                        <i class="fa fa-users"></i> <b>Usuários</b>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center m-t-sm m-b-md">
+                            <img src="assets/public/img/png/forest/backpack.png" width="85px">
+                        </div>
+
+                        <span class="block"><b>Ano Passado:</b> 230 usuários</span>
+                        <span class="block"><b>Ano Atual:</b> 460 usuários</span>
+
+                        <hr>
+
+                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> no último ano</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="dashboard-card dashboard-box">
+                    <div class="card-header back background-green">
+                        <i class="fa fa-tree"></i> <b>Trilhas</b>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center m-t-sm m-b-md">
+                            <img src="assets/public/img/png/forest/picnic.png" width="85px">
+                        </div>
+
+                        <span class="block"><b>Ano Passado:</b> 230 usuários</span>
+                        <span class="block"><b>Ano Atual:</b> 460 usuários</span>
+
+                        <hr>
+
+                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> no último ano</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="dashboard-card dashboard-box">
+                    <div class="card-header back background-orange">
+                        <i class="fa fa-users"></i> <b>Locais</b>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center m-t-sm m-b-md">
+                            <img src="assets/public/img/png/forest/campfire.png" width="85px">
+                        </div>
+
+                        <span class="block"><b>Ano Passado:</b> 230 usuários</span>
+                        <span class="block"><b>Ano Atual:</b> 460 usuários</span>
+
+                        <hr>
+
+                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> no último ano</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="dashboard-card dashboard-box">
+                    <div class="card-header back background-blue">
+                        <i class="fa fa-users"></i> <b>Tempo</b>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center m-t-sm m-b-md">
+                            <img src="assets/public/img/png/forest/marshmallow.png" width="85px">
+                        </div>
+
+                        <span class="block"><b>Ano Passado:</b> 230 usuários</span>
+                        <span class="block"><b>Ano Atual:</b> 460 usuários</span>
+
+                        <hr>
+
+                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> no último ano</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 padding-sm m-t-md m-b-lg text-left">
+                <div class="header">
+                    <h4>
+                        <b>Informações da Aplicação</b>
+                        <i class="fa fa-pie-chart right m-r-sm" style="margin-top:4px"></i>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="dashboard-card card text-left">
+                    <div class="dashboard-card-header m-b-md">
+                        <h5>
+                            <b>Trilhas executadas</b>
+                            <i class="fa fa-bicycle right"></i>
+                        </h5>
+                    </div>
+
+                    <div class="dashboard-card-body">
+                        <input type="text" class="green-dial" value="50">
+
+                        <div class="dashboard-card-information m-t-md text-left">
+                            <span class="block"><b>Executadas mês passado:</b> 4 trilhas</span>
+                            <span class="block m-t-sm"><b>Executadas esse mês:</b> 6 trilhas</span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card-footer m-t-md">
+                        <b class="green">Crescimento de 50%</b>
+
+                        <div class="dashboard-card-footer-actions right m-t-sm">
+                            <a href="" class="green"><i class="fa fa-bar-chart"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card card text-left m-t-md">
+                    <div class="dashboard-card-header m-b-md">
+                        <h5>
+                            <b>Metas impostas</b>
+                            <i class="fa fa-tree right"></i>
+                        </h5>
+                    </div>
+
+                    <div class="dashboard-card-body">
+                        <input type="text" class="yellow-dial" value="15">
+
+                        <div class="dashboard-card-information m-t-md text-left">
+                            <span class="block"><b>Já executadas:</b> 3 trilhas</span>
+                            <span class="block m-t-sm"><b>Faltam executar:</b> 20 trilhas</span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card-footer m-t-md">
+                        <b class="green">Crescimento de 5%</b>
+
+                        <div class="dashboard-card-footer-actions right m-t-sm">
+                            <a href="" class="green"><i class="fa fa-bar-chart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8">
+                <div class="dashboard-card card text-left">
+                    <div class="dashboard-card-header m-b-md">
+                        <h5>
+                            <b>Tempo gasto/trilha</b>
+                            <i class="fa fa-dashboard right"></i>
+                        </h5>
+                    </div>
+
+                    <div class="dashboard-card-body">
+                        <div class="row m-b-md">
+                            <div class="col-sm-4">
+                                <input type="text" value="15" class="orange-dial">
+                            </div>
+
+                            <div class="col-sm-4">
+                                <input type="text" value="32" class="red-dial">
+                            </div>
+
+                            <div class="col-sm-4">
+                                <input type="text" value="62" class="blue-dial">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="dashboard-table">
+                                    <thead>
+                                    <tr>
+                                        <th>Ciclista/Pessoa</th>
+                                        <th>Total percorrido</th>
+                                        <th>Tempo Gasto</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <i class="fa fa-star yellow"></i> Gabriel
+                                        </td>
+                                        <td>42KM</td>
+                                        <td>01:25 hrs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <i class="fa fa-star silver"></i> Murilo
+                                        </td>
+                                        <td>38KM</td>
+                                        <td>01:22 hrs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <i class="fa fa-star bronze"></i> Adeilton
+                                        </td>
+                                        <td>36KM</td>
+                                        <td>01:17 hrs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gustavo</td>
+                                        <td>32KM</td>
+                                        <td>01:12 hrs</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card-information m-t-md text-left">
+                            <span class="block"><b>Média KM percorridos:</b> 40KM percorridos</span>
+                            <span class="block m-t-sm"><b>Quantidade/Mês:</b> Você executou essa rota/trilha 2 vezes no último mês</span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card-footer m-t-md">
+                        <b class="green">Informações referente à 13/11/2017 (Hoje)</b>
+
+                        <div class="dashboard-card-footer-actions right m-t-sm">
+                            <a href="" class="green"><i class="fa fa-bar-chart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

@@ -16,10 +16,15 @@ export class ListaTrailComponent implements OnInit {
   constructor(private trailService: TrailService) { }
 
   ngOnInit() {
-    this.resetResponse(); 
-
+    this.getListOfTrails();
+  }
+  
+  getListOfTrails() {
+    this.resetResponse(); // Reset response of older request to API
+    
     this.trailService.getListOfTrails().subscribe(
       (trails: any) => {
+        console.log(trails);
         if(trails.message)
           return this.response.message = trails.message;
 
@@ -29,7 +34,7 @@ export class ListaTrailComponent implements OnInit {
         this.listaTrails = trails.rows;
         this.response.success = trails;
       }
-    )    
+    )  
   }
 
   resetResponse() {

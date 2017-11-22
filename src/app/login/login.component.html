@@ -1,38 +1,66 @@
-<div class="container">
-  <div class="panel panel-default col-md-4 col-md-offset-4">
-    <div class="panel-body">
-      <div class="page-header text-center">
-        <h3>Portal Administrativo</h3>
+<div class="login-form align-in-center">
+  <div class="login-information">
+      <div class="logo">
+          <h4 style="margin-top:10px">
+              <b>
+                  <span class="white">TRAIL</span>
+                  <span class="green">
+                      MAKER
+                      <i class="fa fa-tree"></i>
+                  </span>
+              </b>
+          </h4>
       </div>
-      <form #formulario="ngForm" 
-            (ngSubmit)="login(formulario)">
-        <div class="form-group"
-             [class.has-error]="hasErrorAndTouched(email)">
-          <label for="email">E-mail</label>
-          <input type="email" 
-                 name="email"
-                 #email="ngModel"
-                 ngModel
-                 required
-                 class="form-control">
-        </div>
-        <div class="form-group"
-             [class.has-error]="hasErrorAndTouched(passwd)">
-          <label for="email">Senha</label>
-          <input type="password" 
-                 name="passwd"
-                 #passwd="ngModel"
-                 ngModel
-                 required
-                 class="form-control">
-        </div>
-        <div class="row">
-          <div class="col-sm-5 col-sm-offset-7">
-            <button type="submit"
-                    class="btn btn-primary btn-block">Login</button>
-          </div>
-        </div>
-      </form>
-    </div>
+      <div class="rounded-photo">
+          <img src="assets/public/img/png/forest/backpack.png" width="65%">
+      </div>
+      <div class="block milk m-t-sm">
+          <b>A aventura está lá fora.</b>
+      </div>
+  </div>
+
+  <div class="login-card">
+      <div class="login-header">
+          <h4>
+              Login/Cadastro
+              <i class="fa fa-user-secret right"></i>
+          </h4>
+      </div>
+
+      <div class="login-body">
+          <form #formulario="ngForm" 
+                (ngSubmit)="login(formulario)">
+              <div class="form-group"
+                   [class.has-error]="hasErrorAndTouched(email)">
+                  <label for=""><b>Conta de E-mail</b></label>
+                  <input type="email" 
+                         name="email"
+                         #email="ngModel"
+                         ngModel
+                         required
+                         class="form-control">
+              </div>
+
+              <div class="form-group"
+                   [class.has-error]="hasErrorAndTouched(passwd)">
+                  <label for=""><b>Senha</b></label>
+                  <input type="password" 
+                         name="passwd"
+                         #passwd="ngModel"
+                         ngModel
+                         required
+                         class="form-control">
+              </div>
+
+              <div class="form-group">
+                  <a href="" class="forgot-password">Esqueci minha senha</a>
+                  <button class="refresh-information right">Login <i class="fa fa-key"></i></button>
+              </div>
+          </form>
+      </div>
+
+      <div class="copyright">
+          <b>© Copyright <span class="green">Trail Makers</span> Reserved</b>
+      </div>
   </div>
 </div>

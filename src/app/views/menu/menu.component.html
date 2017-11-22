@@ -1,6 +1,5 @@
-<nav class="navbar navbar-default">
+<!-- <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -11,7 +10,6 @@
       <a class="navbar-brand" routerLink="dashboard">Trail Makers</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
           <li routerLinkActive="active"><a routerLink="/usuarios/lista">Usuários</a></li>
@@ -20,6 +18,42 @@
       <ul class="nav navbar-nav navbar-right">
         <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    </div>
+  </div>
+</nav> -->
+<div class="application-menu">
+    <div class="application-menu-header">
+        <h4>
+            <b>
+                <span class="white">TRAIL</span>
+                <span class="green">MAKER</span>
+            </b>
+        </h4>
+    </div>
+
+    <div class="application-menu-user-photo text-center">
+        <div class="rounded-photo">
+            <img src="assets/public/img/png/023-costume.png" width="65%">
+        </div>
+        <div class="menu-user-name white medium-font m-t-sm">
+            <b>Gabriel Giro Resende <i class="fa fa-angle-double-down green"></i></b>
+        </div>
+    </div>
+
+    <div class="application-menu-actions">
+        <a routerLinkActive="menu-action-active" routerLink="/dashboard" class="action">
+            Dashboard <i class="fa fa-pie-chart green"></i>
+        </a>
+        <a routerLinkActive="menu-action-active" routerLink="/usuarios/lista" class="action">
+            Usuários <i class="fa fa-users green"></i>
+        </a>
+
+        <a routerLinkActive="menu-action-active" routerLink="/trails/lista"class="action">
+            Trilhas <i class="fa fa-tree green"></i>
+        </a>
+
+        <a class="action">
+            Efetuar Logout <i class="fa fa-sign-out green"></i>
+        </a>
+    </div>
+</div>

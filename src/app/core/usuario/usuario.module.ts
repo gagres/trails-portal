@@ -10,6 +10,7 @@ import { UsuarioRoutingModule } from './usuario.routing.module';
 import { UsuarioService } from './usuario.service';
 // Component
 import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
+import { UsuarioInfoComponent } from './usuario-info/usuario-info.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,10 @@ import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
     SharedModule,
     UsuarioRoutingModule
   ],
-  declarations: [ListaUsuarioComponent],
+  declarations: [
+    ListaUsuarioComponent,
+    UsuarioInfoComponent
+  ],
   providers: [UsuarioService]
 })
 export class UsuarioModule { }

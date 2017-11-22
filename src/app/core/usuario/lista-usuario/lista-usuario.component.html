@@ -1,69 +1,129 @@
-<div class="container">
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <div class="page-header">
-        <h3>Lista de usuários <small>(Ativos e Inativos)</small></h3>
-      </div>
-      <div class="row">
-        <div class="col-md-12" *ngIf="response.message">
-          <div class="alert alert-warning">
-            {{ response.message }}
+<div class="application-navigation-bar"></div>
+<div class="application-body">
+  <div class="application-body-content text-center">
+    <div class="row header">
+      <div class="col-sm-8">
+        <div class="application-body-title text-left m-b-lg m-t-md">
+          <div class="application-body-title-image inline-block align-middle m-r-sm">
+            <img src="assets/public/img/png/009-ninja.png" width="80px">
+          </div>
+          <div class="application-body-title-content inline-block align-middle">
+            <h4><b>Usuários/Ciclistas</b></h4>
+            Informações completas referente a usuários suas relações.
           </div>
         </div>
       </div>
-      <div class="table-info" *ngIf="response.success">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-6 text-right">
-            <button class="btn btn-success btn-sm">
-              <span class="glyphicon glyphicon-menu-left"></span> 
-            </button>
-            <input type="text" 
-                    class="form-control table-input"
-                    value="1"
-                    disabled> / 100
-            <button class="btn btn-success btn-sm">
-              <span class="glyphicon glyphicon-menu-right"></span> 
-            </button>
+
+      <div class="col-sm-4" style="display:flex;justify-content:flex-end;align-items:center;padding-right:25px">
+        <img src="assets/public/img/png/forest/backpack-1.png" width="75px">
+      </div>
+    </div>
+    <div class="row m-b-md m-t-md">
+        <div class="col-sm-12 text-left padding-sm">
+            <h4 style="margin-bottom:3px;"><b>Lista de Usuários</b></h4>
+            Aqui você visualiza informações referente à perfil, pontuações e relações estatísticas dos usuários cadastrados no sistema.
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8 padding-sm text-left">
+          <div class="application-body-filters">
+              <input type="text" placeholder="Usuário/Ciclista" class="filter-input m-r-sm">
+              <input type="date" placeholder="Inicio" class="filter-input m-r-sm">
+              <input type="date" placeholder="Fim" class="filter-input m-r-sm">
+              <button class="btn btn-info btn-icon"
+                      (click)="getListOfUsers()">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
           </div>
-        </div><br/>
-        <table class="table table-bordered">
-          <thead>
-            <th class="text-center">Nome</th>
-            <th class="text-center">Usuário</th>
-            <th class="text-center">Idade</th>
-            <th class="text-center">E-mail</th>
-            <th class="text-center">Status</th>
-            <th></th>
+      </div>
+      <div class="col-sm-4">
+          <ul class="pagination right m-t-sm">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-12 padding-sm">
+        <div class="text-center alert alert-danger padding-sm" *ngIf="response.status.message">
+          {{ response.status.message }}
+        </div>
+        <div class="text-center alert alert-success padding-sm" *ngIf="response.status.success">
+          {{ response.status.success }}
+        </div>
+      </div>
+      <div class="col-sm-12 padding-sm">
+        <table class="users-table m-t-sm">
+          <thead style="background-color:#9D799D">
+            <tr>
+              <th class="text-center">Código</th>
+              <th class="text-center">Nome</th>
+              <th class="text-center">Usuário</th>
+              <th class="text-center">Criado em</th>
+              <th class="text-center">Última atualização</th>
+              <th class="text-center">Status</th>
+              <th class="text-center">
+                  Ações
+                  <i class="fa fa-bookmark right" style="font-size:19px"></i>
+              </th>
+            </tr>
           </thead>
-          <tbody>
-            <tr class="text-center"
-                *ngFor="let usuario of listaUsuarios">
-              <td>{{ usuario.realname }}</td>
-              <td>{{ usuario.username }}</td>
-              <td>{{ usuario.age }} anos</td>
-              <td>{{ usuario.email }}</td>
-              <td>{{ usuario.active ? 'Ativo' : 'Inativo' }}</td>
-              <td>
-                <button class="btn btn-icon btn-info btn-sm">
-                  <i class="glyphicon glyphicon-user"></i>
-                </button>
-                <div class="btn-group" dropdown>
-                  <button dropdownToggle class="btn btn-icon btn-warning btn-sm">
-                      <i class="glyphicon glyphicon-transfer"></i>
-                  </button>
-                  <ul *dropdownMenu class="dropdown-menu" role="menu">
-                    <li role="menuitem"><a class="dropdown-item" href="#">Ativar</a></li>
-                    <li role="menuitem"><a class="dropdown-item" href="#">Desativar</a></li>
-                  </ul>
-                </div>
+          <tbody class="text-center">
+              <tr *ngFor="let usuario of listaUsuarios">
+                <td># {{ usuario.userID }}</td>
+                <td>{{ usuario.realname }}</td>
+                <td>{{ usuario.username }}</td>
+                <td>
+                  {{ usuario.dtin ? (usuario.dtin | date:'dd/MM/yyyy') : '-- --' }}
+                </td>
+                <td>
+                  {{ usuario.dtstamp ? (usuario.dtstamp | date:'dd/MM/yyyy') : '-- --' }}
+                </td>
+                <td [ngSwitch]="usuario.active">
+                    <label class="label label-success" *ngSwitchCase="true">Ativo</label>
+                    <label class="label label-danger" *ngSwitchDefault>Inativo</label>
+                </td>
+                <td [ngSwitch]="usuario.active">
+                  <a [routerLink]="['/usuarios', usuario.userID, 'info']">
+                      <i class="fa fa-info icon-body background-yellow white"></i>
+                  </a>
+                  <a (click)="changeStatusUser(usuario, 0)" *ngSwitchCase="true">
+                      <i class="fa fa-thumbs-down icon-body background-red white"></i>
+                  </a>
+                  <a (click)="changeStatusUser(usuario, 1)" *ngSwitchDefault>
+                      <i class="fa fa-thumbs-up icon-body background-green white"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr *ngIf="!listaUsuarios.length">
+                <td colspan="7">Nenhum usuário cadastrado no sistema</td>
+              </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="qtd-pag text-left padding-sm" style="padding-top:8px">
+                <select class="form-control">
+                  <option value="5" selected>5</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                  <option value="200">200</option>
+                </select>
+              </td>
+              <td class="padding-sm" style="padding-top:22px" colspan="6">
+                <ul class="pagination right">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
               </td>
             </tr>
-          </tbody>
+          </tfoot>
         </table>
       </div>
-      <p *ngIf="!response.success">
-        Nenhuma informação disponível na tabela
-      </p>
     </div>
   </div>
 </div>

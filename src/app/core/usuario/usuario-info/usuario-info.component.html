@@ -1,0 +1,156 @@
+<div class="application-navigation-bar"></div>
+<div class="application-body" *ngIf="usuarioSelected">
+  <div class="application-body-content text-center">
+    <div class="row header">
+      <div class="col-sm-8">
+        <div class="application-body-title text-left m-b-lg m-t-md">
+          <div class="application-body-title-image inline-block align-middle m-r-sm">
+            <img src="assets/public/img/png/010-boy-19.png" width="80px">
+          </div>
+          <div class="application-body-title-content inline-block align-middle">
+            <h4>
+              <b [ngSwitch]="usuarioSelected.active">
+                {{ usuarioSelected.realname }} 
+                <span class="green" *ngSwitchCase="true">(Ativo)</span>
+                <span class="red" *ngSwitchDefault>(Inativo)</span>
+              </b>
+            </h4>
+            Informações completas referente ao usuário em questão.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4" style="display:flex;justify-content:flex-end;align-items:center;padding-right:25px">
+        <img src="assets/public/img/png/forest/backpack-1.png" width="75px">
+      </div>
+    </div>
+
+    <div class="row m-t-md">
+      <div class="col-sm-8">
+        <div class="dashboard-card text-left">
+          <div class="dashboard-card-header">
+            <h5 class="m-b-sm">
+              <b>Informações Gerais</b>
+              <i class="fa fa-user-circle right green"></i>
+            </h5>
+          </div>
+          <div class="dashboard-card-body m-t-md padding-sm text-left">
+            <div class="block information-group">
+              <span class="m-r-sm"><b>Nome:</b></span>
+              <span>{{ usuarioSelected.realname }}</span>
+            </div>
+            <div class="block m-t-sm information-group">
+              <span class="m-r-sm"><b>Usuário:</b></span>
+              <span>{{ usuarioSelected.username }}</span>
+            </div>
+            <div class="block m-t-sm information-group" [ngSwitch]="usuarioSelected.active">
+              <span class="m-r-sm"><b>Status:</b></span>
+              <span class="label padding-sm label-success text-center" *ngSwitchCase="true">
+                  Ativo
+              </span>
+              <span class="label padding-sm label-danger text-center" *ngSwitchDefault>
+                  Inativo
+              </span>
+            </div>
+            <div class="block m-t-sm right information-group">
+              <b>Criado em:</b>
+              <span>{{ usuarioSelected.dtin | date:'dd/MM/yyyy' }}</span>
+            </div>
+            <div class="block m-t-sm information-group">
+              <b>Última atualização</b>
+              <span>{{ usuarioSelected.dtstamp | date:'dd/MM/yyyy' }}</span>
+            </div>
+          </div>
+          <div class="dashboard-card-footer m-t-md text-right"
+               [ngSwitch]="usuarioSelected.active">
+            <span class="left m-t-md">
+              Este usuário possui 
+                <b class="blue">{{ usuarioSelected.following.length }}</b> 
+              seguidores
+            </span>
+            <button class="inactivate-information m-t-sm" 
+                    style="width:150px"
+                    (click)="changeStatusUser(0)"
+                    *ngSwitchCase="true">
+              <b>Inativar Conta <i class="fa fa-thumbs-down"></i></b>
+            </button>
+            <button class="activate-information m-t-sm" 
+                    style="width:150px"
+                    (click)="changeStatusUser(1)"
+                    *ngSwitchDefault>
+              <b>Ativar Conta <i class="fa fa-thumbs-up"></i></b>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="dashboard-card text-left">
+          <div class="dashboard-card-header">
+            <h5 class="m-b-sm">
+              <b>Ranking Geral</b>
+              <i class="fa fa-list-ol right green"></i>
+            </h5>
+          </div>
+          <div class="dashboard-card-body">
+            <table class="dashboard-table m-t-sm">
+              <thead>
+                <tr>
+                  <th>Posição</th>
+                  <th>Usuário</th>
+                  <th>Tempo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding-top:22px" colspan="3">Nada para mostrar</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dashboard-card-footer m-t-sm text-right">
+            <button class="refresh-information m-t-sm"><b>Dashboard <i class="fa fa-dashboard"></i></b></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-8 text-left">
+        <div class="dashboard-card">
+          <div class="dashboard-card-header">
+              <h5 class="m-b-sm">
+                  <b>Relação com Trilhas</b>
+                  <i class="fa fa-motorcycle right green"></i>
+              </h5>
+          </div>
+          <div class="dashboard-card-body">
+            <table class="dashboard-table m-t-md m-b-md">
+              <thead>
+                <tr>
+                  <th>Trilha</th>
+                  <th>Distância</th>
+                  <th>Tempo</th>
+                  <th>Avaliação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let trail of usuarioSelected.activity">
+                  <td>{{ trail.trailname }}</td>
+                  <td>{{ trail.traildist }}</td>
+                  <td>{{ trail.trailtime }}</td>
+                  <td>{{ trail.trailrat }}</td>
+                </tr>
+                <tr *ngIf="!usuarioSelected.activity.length">
+                  <td style="padding-top:22px" colspan="4">
+                    Este usuário não realizou nenhuma trilha ainda
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dashboard-card-footer text-right">
+            <button class="refresh-information m-t-sm" style="width:200px"><b>Relações Estatísticas <i class="fa fa-dashboard"></i></b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

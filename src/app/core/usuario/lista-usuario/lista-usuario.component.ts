@@ -16,28 +16,56 @@ export class ListaUsuarioComponent implements OnInit {
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
-    this.resetResponse(); // Reinicia anterior do servidor
-
+    this.resetResponse();
+    this.getListOfUsers();
+  }
+  
+  updateLista() {
+    this.resetResponse('usuario');
+    this.getListOfUsers();
+  }
+  
+  getListOfUsers() {
     this.usuarioService.getListOfUsers().subscribe(
       (usuarios: any) => {
         if(usuarios.message)
-          return this.response.message = usuarios.message;
-        
-        if(usuarios.error)
-          return this.response.error = usuarios.error;
+          return this.response.usuario.message = usuarios.message;
 
         this.listaUsuarios = usuarios.rows;
-        this.response.success = usuarios;
+        this.response.usuario.success = usuarios;
       },
-      err => {
+      (err: any) => {
         console.log(err);
-        throw err;
+        this.response.usuario.error = err.message;
       }
     )
   }
 
-  resetResponse() {
-    this.response = { message: null, error: null, success: null };
+  changeStatusUser(usuario: any, newStatus: boolean) {
+    this.resetResponse('status');
+
+    this.usuarioService.changeStatusUser(usuario.userID, newStatus).subscribe(
+      (response: any) => {
+        if(response.message)
+          this.response.status.message = response.message;
+
+        this.response.status.success = 
+          `O novo status de ${usuario.realname} agora é ${ newStatus ? 'Ativo' : 'Inativo' }`;
+
+        usuario.active = newStatus;
+      },
+      (err: any) => {
+        console.log(err);
+        this.response.status.error = err;
+      }
+    )
+  }
+
+  resetResponse(name?: string) {
+    if(name)
+      return this.response[name] = {};
+
+    this.response = { usuario: {}, status: {} };
   }
 
 }

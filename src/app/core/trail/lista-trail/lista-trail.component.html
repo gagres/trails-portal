@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="page-header">
@@ -39,6 +39,117 @@
       <p *ngIf="!listaTrails.length">
         Não existe nenhuma trilha cadastrada ainda
       </p>
+    </div>
+  </div>
+</div> -->
+<div class="application-navigation-bar"></div>
+
+<div class="application-body">
+  <div class="application-body-content text-center">
+    <div class="row header">
+      <div class="col-sm-8">
+        <div class="application-body-title text-left m-b-lg m-t-md">
+          <div class="application-body-title-image inline-block align-middle m-r-sm">
+            <img src="assets/public/img/png/forest/pines.png" width="80px">
+          </div>
+          <div class="application-body-title-content inline-block align-middle">
+            <h4><b>Trilhas</b></h4>
+            Informações completas referente a usuários suas relações.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4" style="display:flex;justify-content:flex-end;align-items:center;padding-right:25px">
+          <img src="assets/public/img/png/forest/bonfire.png" width="75px">
+      </div>
+    </div>
+
+    <div class="row m-b-md m-t-md">
+      <div class="col-sm-12 text-left padding-sm">
+        <h4 style="margin-bottom:3px;"><b>Lista de Trilhas</b></h4>
+        Aqui você visualiza informações referente às trilhas, além de pontuações e relações estatísticas.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-8 padding-sm text-left">
+        <div class="application-body-filters">
+          <input type="text" placeholder="Usuário/Ciclista" class="filter-input m-r-sm">
+          <input type="date" placeholder="Inicio" class="filter-input m-r-sm">
+          <input type="date" placeholder="Fim" class="filter-input m-r-sm">
+          <button class="btn btn-info btn-icon"
+                  (click)="getListOfTrails()">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <ul class="pagination right m-t-sm">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-12 padding-sm">
+        <table class="users-table m-t-sm">
+          <thead style="background-color:#9D799D">
+            <tr>
+              <th class="text-center">Código</th>
+              <th class="text-center">Nome</th>
+              <th class="text-center">Distância</th>
+              <th class="text-center">Tempo</th>
+              <th class="text-center">Criado em</th>
+              <th class="text-center">Avaliação</th>
+              <th class="text-center">
+                Ações
+                <i class="fa fa-bookmark right" style="font-size:19px"></i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let trail of listaTrails">
+              <td># {{ trail.trailID }}</td>
+              <td>{{ trail.trailname }}</td>
+              <td>{{ trail.traildist }} Km</td>
+              <td>{{ trail.trailtime | date:'HH:mm:ss'}}</td>
+              <td>{{ trail.dtin ? (trail.dtin | date:'dd/MM/yyyy') : '-- --' }}</td>
+              <td>{{ trail.trailrat }}</td>
+              <td>
+                  <a routerLink="/dashboard">
+                      <i class="fa fa-info icon-body background-yellow white"></i>
+                  </a>
+              </td>
+            </tr>
+            <tr *ngIf="!listaTrails.length">
+              <td colspan="7">Nenhuma trila cadastrada no sistema</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="qtd-pag text-left padding-sm" style="padding-top:8px">
+                <select class="form-control">
+                  <option value="5" selected>5</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                  <option value="200">200</option>
+                </select>
+              </td>
+              <td class="padding-sm" style="padding-top:22px" colspan="6">
+                <ul class="pagination right">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
     </div>
   </div>
 </div>
