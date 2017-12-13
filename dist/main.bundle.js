@@ -1069,10 +1069,28 @@ var LoginGuard = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/login/login.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".center-in-middle {\n    margin-top: 20%;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"login-form align-in-center\">\n  <div class=\"login-information\">\n      <div class=\"logo\">\n          <h4 style=\"margin-top:10px\">\n              <b>\n                  <span class=\"white\">TRAIL</span>\n                  <span class=\"green\">\n                      MAKER\n                      <i class=\"fa fa-tree\"></i>\n                  </span>\n              </b>\n          </h4>\n      </div>\n      <div class=\"rounded-photo\">\n          <img src=\"assets/public/img/icon.png\" width=\"65%\">\n      </div>\n      <div class=\"block milk m-t-sm\">\n          <b>A aventura está lá fora.</b>\n      </div>\n  </div>\n\n  <div class=\"login-card\">\n      <div class=\"login-header\">\n          <h4>\n              Login/Cadastro\n              <i class=\"fa fa-user-secret right\"></i>\n          </h4>\n      </div>\n\n      <div class=\"login-body\">\n          <form #formulario=\"ngForm\" \n                (ngSubmit)=\"login(formulario)\">\n              <div class=\"form-group\"\n                   [class.has-error]=\"hasErrorAndTouched(email)\">\n                  <label for=\"\"><b>Conta de E-mail</b></label>\n                  <input type=\"email\" \n                         name=\"email\"\n                         #email=\"ngModel\"\n                         ngModel\n                         required\n                         class=\"form-control\">\n              </div>\n\n              <div class=\"form-group\"\n                   [class.has-error]=\"hasErrorAndTouched(passwd)\">\n                  <label for=\"\"><b>Senha</b></label>\n                  <input type=\"password\" \n                         name=\"passwd\"\n                         #passwd=\"ngModel\"\n                         ngModel\n                         required\n                         class=\"form-control\">\n              </div>\n\n              <div class=\"form-group\">\n                  <a href=\"\" class=\"forgot-password\">Esqueci minha senha</a>\n                  <button class=\"refresh-information right\">Login <i class=\"fa fa-key\"></i></button>\n              </div>\n          </form>\n      </div>\n\n      <div class=\"copyright\">\n          <b>© Copyright <span class=\"green\">Trail Makers</span> Reserved</b>\n      </div>\n  </div>\n</div>"
+module.exports = "<div class=\"login-form align-in-center center-in-middle\">\n  <div class=\"login-information\">\n      <div class=\"logo\">\n          <h4 style=\"margin-top:10px\">\n              <b>\n                  <span class=\"white\">TRAIL</span>\n                  <span class=\"green\">\n                      MAKER\n                      <i class=\"fa fa-tree\"></i>\n                  </span>\n              </b>\n          </h4>\n      </div>\n      <div class=\"rounded-photo\">\n          <img src=\"assets/public/img/icon.png\" width=\"65%\">\n      </div>\n      <div class=\"block milk m-t-sm\">\n          <b>A aventura está lá fora.</b>\n      </div>\n  </div>\n\n  <div class=\"login-card\">\n      <div class=\"login-header\">\n          <h4>\n              Login/Cadastro\n              <i class=\"fa fa-user-secret right\"></i>\n          </h4>\n      </div>\n\n      <div class=\"login-body\">\n          <form #formulario=\"ngForm\" \n                (ngSubmit)=\"login(formulario)\">\n              <div class=\"form-group\"\n                   [class.has-error]=\"hasErrorAndTouched(email)\">\n                  <label for=\"\"><b>Conta de E-mail</b></label>\n                  <input type=\"email\" \n                         name=\"email\"\n                         #email=\"ngModel\"\n                         ngModel\n                         required\n                         class=\"form-control\">\n              </div>\n\n              <div class=\"form-group\"\n                   [class.has-error]=\"hasErrorAndTouched(passwd)\">\n                  <label for=\"\"><b>Senha</b></label>\n                  <input type=\"password\" \n                         name=\"passwd\"\n                         #passwd=\"ngModel\"\n                         ngModel\n                         required\n                         class=\"form-control\">\n              </div>\n\n              <div class=\"form-group\">\n                  <a href=\"\" class=\"forgot-password\">Esqueci minha senha</a>\n                  <button class=\"refresh-information right\">Login <i class=\"fa fa-key\"></i></button>\n              </div>\n          </form>\n      </div>\n\n      <div class=\"copyright\">\n          <b>© Copyright <span class=\"green\">Trail Makers</span> Reserved</b>\n      </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1118,7 +1136,7 @@ var LoginComponent = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-login',
             template: __webpack_require__("../../../../../src/app/login/login.component.html"),
-            styleUrls: []
+            styles: [__webpack_require__("../../../../../src/app/login/login.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
