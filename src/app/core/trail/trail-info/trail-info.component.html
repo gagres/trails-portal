@@ -1,0 +1,114 @@
+<div class="application-navigation-bar"></div>
+
+<div class="application-body">
+  <div class="application-body-content">
+    <div class="row header">
+        <div class="col-sm-8">
+            <div class="application-body-title text-left m-b-lg m-t-md">
+                <div class="application-body-title-image inline-block align-middle m-r-sm">
+                    <img src="assets/public/img/png/forest/tent-1.png" width="80px">
+                </div>
+                <div class="application-body-title-content inline-block align-middle">
+                    <h4><b>Serra do Japi <span class="green">(Ativa)</span></b></h4>
+                    Informações da trilha
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4" style="display:flex;justify-content:flex-end;align-items:center;padding-right:25px">
+            <img src="assets/public/img/png/forest/backpack-1.png" width="75px">
+        </div>
+    </div>
+    <div class="row m-t-md">
+      <div class="col-sm-6">
+        <div class="dashboard-card text-left">
+          <div class="dashboard-card-header">
+            <h5 class="m-b-sm">
+              <b>Informações Gerais</b>
+              <i class="fa fa-user-circle right green"></i>
+            </h5>
+          </div>
+          <div class="dashboard-card-body m-t-md padding-sm text-left">
+            <div class="block information-group">
+              <span class="m-r-sm"><b>Nome:</b></span>
+              <span>Trilha 01</span>
+            </div>
+            <div class="block m-t-sm information-group">
+              <span class="m-r-sm"><b>Distância total:</b></span>
+              <span>2.5 Km</span>
+            </div>
+            <div class="block m-t-sm information-group">
+              <span class="m-r-sm"><b>Tempo de trilha:</b></span>
+              <span>2h 30min</span>
+            </div>
+            <div class="block m-t-sm information-group">
+              <span class="m-r-sm"><b>Criador: </b></span>
+              <span>Gabriel Giro Resende</span>
+            </div>
+            <div class="block m-t-sm information-group">
+              <span class="m-r-sm"><b>Status:</b></span>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i>
+              <!-- <span class="label padding-sm label-danger text-center">
+                  Inativo
+              </span> -->
+            </div>
+            <div class="block m-t-sm right information-group">
+              <b>Criado em:</b>
+              <span>{{ '2017-11-25' | date:'dd/MM/yyyy' }}</span>
+            </div>
+            <div class="block m-t-sm information-group">
+              <b>Última atualização</b>
+              <span>{{ '2017-11-25' | date:'dd/MM/yyyy' }}</span>
+            </div>
+          </div>
+          <div class="dashboard-card-footer m-t-md text-right">
+            <h4 class="left m-t-md">
+              Total de repetições: <b class="blue">1</b>
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="dashboard-card text-left">
+          <div class="dashboard-card-header">
+            <h5 class="m-b-sm">
+              <b>Ranking Geral</b>
+              <i class="fa fa-list-ol right green"></i>
+            </h5>
+          </div>
+          <div class="dashboard-card-body">
+            <table class="dashboard-table m-t-sm">
+              <thead>
+                <tr>
+                  <th>Usuário</th>
+                  <th>Tempo</th>
+                  <th>Repetições</th>
+                  <th>Avaliação Média</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding-top:22px" colspan="4">Nada para mostrar</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dashboard-card-footer m-t-sm text-right">
+            <!-- <button class="refresh-information m-t-sm"><b>Dashboard <i class="fa fa-dashboard"></i></b></button> -->
+            <h4 class="left m-t-md">
+              -- --
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m-t-md">
+        <div class="col-sm-12">
+          <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+        </div>
+    </div>
+  </div>
+</div>

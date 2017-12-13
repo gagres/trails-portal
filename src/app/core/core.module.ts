@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 
-import { AgmCoreModule } from '@agm/core';
 import { ChartsModule } from 'ng2-charts';
 
 // Modules
@@ -14,9 +13,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDeMrigVSl1q4DGS8R-nGQPnFZSNLuSdFM'
-    }),
     ChartsModule,
     SharedModule,
     UsuarioModule,

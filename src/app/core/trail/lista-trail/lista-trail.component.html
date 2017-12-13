@@ -117,7 +117,7 @@
               <td>{{ trail.dtin ? (trail.dtin | date:'dd/MM/yyyy') : '-- --' }}</td>
               <td>{{ trail.trailrat }}</td>
               <td>
-                  <a routerLink="/dashboard">
+                  <a [routerLink]="['/trails', trail.trailID, 'info']">
                       <i class="fa fa-info icon-body background-yellow white"></i>
                   </a>
               </td>

@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router'
 
 // Componentes
 import { ListaTrailComponent } from './lista-trail/lista-trail.component';
+import { TrailInfoComponent } from './trail-info/trail-info.component';
 
 const TRAIL_ROUTES: Routes = [
     {path: 'trails', children: [
         { path: 'lista', component: ListaTrailComponent },
+        { path: ':trailID/info', component: TrailInfoComponent },
         { path: '**', redirectTo: 'lista', pathMatch: 'full' }
     ]}
 ];

@@ -63,11 +63,10 @@
           </div>
           <div class="dashboard-card-footer m-t-md text-right"
                [ngSwitch]="usuarioSelected.active">
-            <span class="left m-t-md">
-              Este usuário possui 
-                <b class="blue">{{ usuarioSelected.following.length }}</b> 
-              seguidores
-            </span>
+            <h4 class="left m-t-md">
+              Seguidores: <b class="blue">{{ usuarioSelected.following.length }}</b> / 
+              Seguindo: <b class="blue">0</b>
+            </h4>
             <button class="inactivate-information m-t-sm" 
                     style="width:150px"
                     (click)="changeStatusUser(0)"
@@ -108,16 +107,61 @@
             </table>
           </div>
           <div class="dashboard-card-footer m-t-sm text-right">
-            <button class="refresh-information m-t-sm"><b>Dashboard <i class="fa fa-dashboard"></i></b></button>
+            <!-- <button class="refresh-information m-t-sm"><b>Dashboard <i class="fa fa-dashboard"></i></b></button> -->
+            <h4 class="left m-t-md">
+              -- --
+            </h4>
           </div>
         </div>
       </div>
 
-      <div class="col-sm-8 text-left">
+      <div class="col-sm-6 text-left">
         <div class="dashboard-card">
           <div class="dashboard-card-header">
               <h5 class="m-b-sm">
-                  <b>Relação com Trilhas</b>
+                  <b>Últimas trilhas criadas</b>
+                  <i class="fa fa-motorcycle right green"></i>
+              </h5>
+          </div>
+          <div class="dashboard-card-body">
+            <table class="dashboard-table m-t-md m-b-md">
+              <thead>
+                <tr>
+                  <th>Trilha</th>
+                  <th>Distância</th>
+                  <th>Tempo</th>
+                  <th>Avaliação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let trail of usuarioSelected.activity">
+                  <td>{{ trail.trailname }}</td>
+                  <td>{{ trail.traildist }} Km</td>
+                  <td>{{ trail.trailtime | date:'HH:mm:ss' }} - {{ trail.trailtime }}</td>
+                  <td>{{ trail.trailrat }}</td>
+                </tr>
+                <tr *ngIf="!usuarioSelected.activity.length">
+                  <td style="padding-top:22px" colspan="4">
+                    Este usuário não realizou nenhuma trilha ainda
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dashboard-card-footer text-right">
+            <h4 class="left m-t-md">
+              Total: 
+                <b class="blue">{{ usuarioSelected.following.length }}</b>
+            </h4>
+            <!-- <button class="refresh-information m-t-sm" style="width:200px"><b>Relações Estatísticas <i class="fa fa-dashboard"></i></b></button> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 text-left">
+        <div class="dashboard-card">
+          <div class="dashboard-card-header">
+              <h5 class="m-b-sm">
+                  <b>Últimas trilhas realizadas</b>
                   <i class="fa fa-motorcycle right green"></i>
               </h5>
           </div>
@@ -147,7 +191,11 @@
             </table>
           </div>
           <div class="dashboard-card-footer text-right">
-            <button class="refresh-information m-t-sm" style="width:200px"><b>Relações Estatísticas <i class="fa fa-dashboard"></i></b></button>
+            <h4 class="left m-t-md">
+              Total: 
+                <b class="blue">{{ usuarioSelected.following.length }}</b>
+            </h4>
+            <!-- <button class="refresh-information m-t-sm" style="width:200px"><b>Relações Estatísticas <i class="fa fa-dashboard"></i></b></button> -->
           </div>
         </div>
       </div>

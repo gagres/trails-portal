@@ -35,7 +35,6 @@ export class UsuarioInfoComponent implements OnInit {
         if(usuario.message)
           return this.response.usuario.message = usuario.message;
 
-        console.log(usuario.rows[0]);
         this.usuarioSelected = usuario.rows[0]
       },
       (err: any) => {

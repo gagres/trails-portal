@@ -22,10 +22,11 @@
         <div class="row">
             <div class="col-sm-6 padding-sm text-left">
                 <div class="application-body-filters m-t-lg m-b-lg">
-                    <input type="text" placeholder="Rota/Trilha" class="filter-input m-r-sm">
-                    <select class="filter-select">
-                        <option value="">Período</option>
-                    </select>
+                    <input type="date" placeholder="Inicio" class="filter-input m-r-sm">
+                    <input type="date" placeholder="Fim" class="filter-input m-r-sm">
+                    <button class="btn btn-info btn-icon">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
 
@@ -56,12 +57,12 @@
                             <img src="assets/public/img/png/forest/backpack.png" width="85px">
                         </div>
 
-                        <span class="block"><b>Ano Passado:</b> 230 usuários</span>
-                        <span class="block"><b>Ano Atual:</b> 460 usuários</span>
+                        <span class="block"><b>Atualmente:</b> 230 usuários</span>
+                        <span class="block"><b>Última consulta:</b> 460 usuários</span>
 
                         <hr>
 
-                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> no último ano</span>
+                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> desde a última consulta</span>
                     </div>
                 </div>
             </div>
@@ -76,12 +77,12 @@
                             <img src="assets/public/img/png/forest/picnic.png" width="85px">
                         </div>
 
-                        <span class="block"><b>Ano Passado:</b> 230 usuários</span>
-                        <span class="block"><b>Ano Atual:</b> 460 usuários</span>
+                        <span class="block"><b>Atualmente:</b> 230 usuários</span>
+                        <span class="block"><b>Última consulta:</b> 460 usuários</span>
 
                         <hr>
 
-                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> no último ano</span>
+                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> desde a última consulta</span>
                     </div>
                 </div>
             </div>
@@ -96,12 +97,12 @@
                             <img src="assets/public/img/png/forest/campfire.png" width="85px">
                         </div>
 
-                        <span class="block"><b>Ano Passado:</b> 230 usuários</span>
-                        <span class="block"><b>Ano Atual:</b> 460 usuários</span>
+                        <span class="block"><b>Atualmente:</b> 230 usuários</span>
+                        <span class="block"><b>Última consulta:</b> 460 usuários</span>
 
                         <hr>
 
-                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> no último ano</span>
+                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> desde a última consulta</span>
                     </div>
                 </div>
             </div>
@@ -116,12 +117,12 @@
                             <img src="assets/public/img/png/forest/marshmallow.png" width="85px">
                         </div>
 
-                        <span class="block"><b>Ano Passado:</b> 230 usuários</span>
-                        <span class="block"><b>Ano Atual:</b> 460 usuários</span>
+                        <span class="block"><b>Atualmente:</b> 230 usuários</span>
+                        <span class="block"><b>Última consulta:</b> 460 usuários</span>
 
                         <hr>
 
-                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> no último ano</span>
+                        <span class="block"><b class="green align-middle"><i class="fa fa-sort-asc"></i> 100%</b> desde a última consulta</span>
                     </div>
                 </div>
             </div>
@@ -147,23 +148,27 @@
                     </div>
 
                     <div class="dashboard-card-body">
-                        <input type="text" class="green-dial" value="50">
+                        <canvas baseChart
+                                [data]="trailsTotal.data"
+                                [labels]="trailsTotal.labels"
+                                [colors]="trailsTotal.colors"
+                                [chartType]="trailsTotal.type"></canvas>
 
                         <div class="dashboard-card-information m-t-md text-left">
-                            <span class="block"><b>Executadas mês passado:</b> 4 trilhas</span>
-                            <span class="block m-t-sm"><b>Executadas esse mês:</b> 6 trilhas</span>
+                            <span class="block"><b>Total atual: </b> 4 trilhas</span>
+                            <span class="block m-t-sm"><b>Última consulta:</b> 6 trilhas</span>
                         </div>
                     </div>
 
                     <div class="dashboard-card-footer m-t-md">
-                        <b class="green">Crescimento de 50%</b>
+                        <b class="red">Crescimento de 50%</b>
 
                         <div class="dashboard-card-footer-actions right m-t-sm">
-                            <a href="" class="green"><i class="fa fa-bar-chart"></i></a>
+                            <i class="fa fa-bar-chart"></i>
                         </div>
                     </div>
                 </div>
-                <div class="dashboard-card card text-left m-t-md">
+                <!-- <div class="dashboard-card card text-left m-t-md">
                     <div class="dashboard-card-header m-b-md">
                         <h5>
                             <b>Metas impostas</b>
@@ -172,7 +177,11 @@
                     </div>
 
                     <div class="dashboard-card-body">
-                        <input type="text" class="yellow-dial" value="15">
+                        <canvas baseChart
+                                [data]="trailsTotal.data"
+                                [labels]="trailsTotal.labels"
+                                [colors]="trailsTotal.colors"
+                                [chartType]="trailsTotal.type"></canvas>
 
                         <div class="dashboard-card-information m-t-md text-left">
                             <span class="block"><b>Já executadas:</b> 3 trilhas</span>
@@ -187,33 +196,27 @@
                             <a href="" class="green"><i class="fa fa-bar-chart"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="col-sm-8">
                 <div class="dashboard-card card text-left">
                     <div class="dashboard-card-header m-b-md">
                         <h5>
-                            <b>Tempo gasto/trilha</b>
+                            <b>Tempo gasto/Distância</b>
                             <i class="fa fa-dashboard right"></i>
                         </h5>
                     </div>
 
                     <div class="dashboard-card-body">
                         <div class="row m-b-md">
-                            <div class="col-sm-4">
-                                <input type="text" value="15" class="orange-dial">
-                            </div>
-
-                            <div class="col-sm-4">
-                                <input type="text" value="32" class="red-dial">
-                            </div>
-
-                            <div class="col-sm-4">
-                                <input type="text" value="62" class="blue-dial">
-                            </div>
+                            <canvas baseChart
+                                    [datasets]="ttEDistancia.data"
+                                    [labels]="ttEDistancia.labels"
+                                    [colors]="ttEDistancia.colors"
+                                    [chartType]="ttEDistancia.type"
+                                    [legend]="ttEDistancia.showLegend"></canvas>
                         </div>
-
                         <div class="row">
                             <div class="col-sm-12">
                                 <table class="dashboard-table">
@@ -247,9 +250,9 @@
                                         <td>01:17 hrs</td>
                                     </tr>
                                     <tr>
-                                        <td>Gustavo</td>
-                                        <td>32KM</td>
-                                        <td>01:12 hrs</td>
+                                        <td>+35 pessoas</td>
+                                        <td>67KM</td>
+                                        <td>26:37 hrs</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -258,7 +261,7 @@
 
                         <div class="dashboard-card-information m-t-md text-left">
                             <span class="block"><b>Média KM percorridos:</b> 40KM percorridos</span>
-                            <span class="block m-t-sm"><b>Quantidade/Mês:</b> Você executou essa rota/trilha 2 vezes no último mês</span>
+                            <span class="block m-t-sm"><b>Quantidade/Trilhas:</b> 126 trilhas executadas no total</span>
                         </div>
                     </div>
 

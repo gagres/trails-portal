@@ -24,7 +24,7 @@ export class ListaTrailComponent implements OnInit {
     
     this.trailService.getListOfTrails().subscribe(
       (trails: any) => {
-        console.log(trails);
+        
         if(trails.message)
           return this.response.message = trails.message;
 

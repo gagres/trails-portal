@@ -7,6 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { StorageService } from './services/storage.service';
 import { AuthService } from './services/auth.service';
 import { HttpService } from './services/http.service';
+// Directives
+import { DirectionsMapDirective } from './directives/directions-map-directive';
 
 @NgModule({
     imports: [
@@ -17,9 +19,12 @@ import { HttpService } from './services/http.service';
         CommonModule,
         HttpModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        DirectionsMapDirective
     ],
-    declarations: [],
+    declarations: [
+        DirectionsMapDirective
+    ],
     providers: [
         StorageService,
         AuthService,

@@ -1,0 +1,12 @@
+agm-map {
+    height: 500px;
+    width: 99%;
+    margin-left:1%;
+    display:block;
+}
+sebm-google-map-directions {
+    height: 500px;
+    width: 95%;
+    margin-left: 5%;
+    display:block;
+}
